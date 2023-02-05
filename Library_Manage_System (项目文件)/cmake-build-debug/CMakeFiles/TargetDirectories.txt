@@ -1,3 +1,0 @@
-E:/Creations/Codingland/Clion Projects/Library_Manage_System/cmake-build-debug/CMakeFiles/Library_Manage_System.dir
-E:/Creations/Codingland/Clion Projects/Library_Manage_System/cmake-build-debug/CMakeFiles/edit_cache.dir
-E:/Creations/Codingland/Clion Projects/Library_Manage_System/cmake-build-debug/CMakeFiles/rebuild_cache.dir
