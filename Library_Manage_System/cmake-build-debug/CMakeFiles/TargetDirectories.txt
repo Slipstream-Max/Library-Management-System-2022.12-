@@ -1,3 +1,3 @@
-D:/Creations/Code/C Projects/Library-management-system/Library_Manage_System/cmake-build-debug/CMakeFiles/Library_Manage_System.dir
-D:/Creations/Code/C Projects/Library-management-system/Library_Manage_System/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/Creations/Code/C Projects/Library-management-system/Library_Manage_System/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/slipstream/CLionProjects/Library-Management-System-2022.12-/Library_Manage_System/cmake-build-debug/CMakeFiles/Library_Manage_System.dir
+/home/slipstream/CLionProjects/Library-Management-System-2022.12-/Library_Manage_System/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/slipstream/CLionProjects/Library-Management-System-2022.12-/Library_Manage_System/cmake-build-debug/CMakeFiles/rebuild_cache.dir

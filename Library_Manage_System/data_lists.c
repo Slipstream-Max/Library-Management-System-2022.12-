@@ -1,5 +1,5 @@
-//
-// Created by ¹ÈÑÒ on 2022/12/22.
+ï»¿//
+// Created by è°·å²© on 2022/12/22.
 //
 #include <malloc.h>
 #include "string.h"
@@ -7,12 +7,12 @@
 #include "catagory_management.h"
 #include "menu.h"
 #include "stdio.h"
-#define NON 0 //²»´æÔÚ¸Ã·ÖÀà
-#define YES 1 //´æÔÚ¸Ã·ÖÀà
+#define NON 0 //ä¸å­˜åœ¨è¯¥åˆ†ç±»
+#define YES 1 //å­˜åœ¨è¯¥åˆ†ç±»
 
 struct catagory book_catagory[cat_length];
 
-//Èë¿âÍ¼ÊéµÄÄ£¿é
+//å…¥åº“å›¾ä¹¦çš„æ¨¡å—
 void add_book_operation() {
     int is_done=NON;
     while (!is_done){
@@ -22,47 +22,47 @@ void add_book_operation() {
         scanf("%d %d %s %d",&catagory_number,&book_number,book_name,&book_storage);
         fflush(stdin);
         if(book_catagory[catagory_number].size>=1){
-            //²éÖØ
+            //æŸ¥é‡
             int res=duplicate_checking(catagory_number,book_number,book_storage);
             if(res==YES){
-                printf("ÊéºÅÖØ¸´£¬ÒÑÔö¼Ó¿â´æ¡£\n");
+                printf("ä¹¦å·é‡å¤ï¼Œå·²å¢åŠ åº“å­˜ã€‚\n");
                 fflush(stdout);
                 continue_question(&is_done);
                 continue;
             }
         }
         add_book_to_library(catagory_number,book_number,book_name,book_storage);
-        printf("Ìí¼Ó³É¹¦!ÊéÔÚ%d·ÖÀà£¬ÊéºÅÊÇ%d£¬ÊéÃûÊÇ%s£¬ÓĞ%d±¾¡£\n",catagory_number,book_number,book_name,book_storage);
+        printf("æ·»åŠ æˆåŠŸ!ä¹¦åœ¨%dåˆ†ç±»ï¼Œä¹¦å·æ˜¯%dï¼Œä¹¦åæ˜¯%sï¼Œæœ‰%dæœ¬ã€‚\n",catagory_number,book_number,book_name,book_storage);
         continue_question(&is_done);
     }
 }
 
-//ÕæÕıÖ´ĞĞÈë¿âÍ¼Êé²Ù×÷
+//çœŸæ­£æ‰§è¡Œå…¥åº“å›¾ä¹¦æ“ä½œ
 void add_book_to_library(int catagory_number,int book_number,char *book_name,int book_storage) {
 
     if(book_catagory[catagory_number].is_exist==NON){
         book_catagory[catagory_number].is_exist=YES;
     }
-    //Á´±íÖ¸ÏòÖ®Ç°´æµÄÊé
-    struct Book_Node *New_Book; //¶¯Ì¬ÉêÇëÒ»¸öÄÚ´æ¿Õ¼ä³ÉÎªÍ¼Êé
+    //é“¾è¡¨æŒ‡å‘ä¹‹å‰å­˜çš„ä¹¦
+    struct Book_Node *New_Book; //åŠ¨æ€ç”³è¯·ä¸€ä¸ªå†…å­˜ç©ºé—´æˆä¸ºå›¾ä¹¦
     New_Book=(struct Book_Node*) malloc(sizeof(struct Book_Node));
     New_Book->next=book_catagory[catagory_number].head;
-    //³õÊ¼»¯Îª¿É·ÃÎÊ
+    //åˆå§‹åŒ–ä¸ºå¯è®¿é—®
     New_Book->able=YES;
-    //ÊéÃû×Ö
+    //ä¹¦åå­—
     strcpy(New_Book->bookname,book_name);
-    //ÊéºÅ
+    //ä¹¦å·
     New_Book->book_number=book_number;
-    //ÉèÖÃÊéµÄ´æÁ¿
+    //è®¾ç½®ä¹¦çš„å­˜é‡
     New_Book->total_storage=book_storage;
     New_Book->storage_now=book_storage;
     New_Book->borrow_number=0;
-    //Í·Ö¸ÕëÖ¸Ïò×îºó´æµÄÊé
+    //å¤´æŒ‡é’ˆæŒ‡å‘æœ€åå­˜çš„ä¹¦
     book_catagory[catagory_number].head=New_Book;
-    book_catagory[catagory_number].size+=1; //ÊıÁ¿Ôö¼Ó
+    book_catagory[catagory_number].size+=1; //æ•°é‡å¢åŠ 
 }
 
-//³õÊ¼»¯·ÖÀàÁ´±í
+//åˆå§‹åŒ–åˆ†ç±»é“¾è¡¨
 void catagory_init(){
     for (int i = 0; i < cat_length; ++i) {
         book_catagory[i].is_exist=NON;
@@ -72,7 +72,7 @@ void catagory_init(){
     }
 }
 
-//²éÖØ
+//æŸ¥é‡
 int duplicate_checking(int catagory_num, int book_num,int storage_num) {
     struct Book_Node *point=book_catagory[catagory_num].head;
     while(point!=NULL){
@@ -86,23 +86,23 @@ int duplicate_checking(int catagory_num, int book_num,int storage_num) {
     return NON;
 }
 
-//ÊÇ·ñÑ­»·µÄº¯Êı ¸´ÓÃÂÊºÜ¸ß
+//æ˜¯å¦å¾ªç¯çš„å‡½æ•° å¤ç”¨ç‡å¾ˆé«˜
 void continue_question(int *is_done){
-    printf("ÊÇ·ñÊäÈëÍê±Ï£¿1ÍË³ö 0¼ÌĞø\n");
+    printf("æ˜¯å¦è¾“å…¥å®Œæ¯•ï¼Ÿ1é€€å‡º 0ç»§ç»­\n");
     fflush(stdout);
     scanf("%d",is_done);
     fflush(stdin);
     if(*is_done==YES){
-        printf("ÍË³öÖĞ......\n");
+        printf("é€€å‡ºä¸­......\n");
         fflush(stdout);
     }
     else{
-        printf("¼ÌĞø\n");
+        printf("ç»§ç»­\n");
         fflush(stdout);
     }
 }
 
-//Í¼Êé³ö¿â
+//å›¾ä¹¦å‡ºåº“
 void delete_book_operation(){
     int catagory_num,book_num;
     int isDone=NON;
@@ -119,21 +119,21 @@ void delete_book_operation(){
         }
 
         if (find == NON){
-            printf("²éÎŞ´ËÊé£¬³ö¿âÊ§°Ü\n");
+            printf("æŸ¥æ— æ­¤ä¹¦ï¼Œå‡ºåº“å¤±è´¥\n");
             continue_question(&isDone);
             continue;
         }
 
         if(point->borrow_number!=0){
-            printf("½èÔÄÊıÎª %d ²»ÄÜ³ö¿â¡£\n",point->borrow_number);
+            printf("å€Ÿé˜…æ•°ä¸º %d ä¸èƒ½å‡ºåº“ã€‚\n",point->borrow_number);
             fflush(stdout);
             continue_question(&isDone);
             continue;
         }
-        //Õı³£´¦Àí
+        //æ­£å¸¸å¤„ç†
         point->able=NON;
         book_catagory[catagory_num].size-=1;
-        printf("³ö¿â³É¹¦¡£\n");
+        printf("å‡ºåº“æˆåŠŸã€‚\n");
         continue_question(&isDone);
     }
 }

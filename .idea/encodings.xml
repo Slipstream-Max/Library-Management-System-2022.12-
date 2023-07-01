@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
-    <file url="PROJECT" charset="GBK" />
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/Library_Manage_System/book.c" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Library_Manage_System/book.h" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Library_Manage_System/catagory_management.c" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Library_Manage_System/catagory_management.h" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Library_Manage_System/cmake-build-debug/data/data_load.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Library_Manage_System/cmake-build-debug/data/data_save.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Library_Manage_System/data/data_load.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Library_Manage_System/data/data_save.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Library_Manage_System/data_io.c" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Library_Manage_System/data_io.h" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Library_Manage_System/data_list.h" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Library_Manage_System/data_lists.c" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Library_Manage_System/main.c" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Library_Manage_System/menu.c" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Library_Manage_System/option.c" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Library_Manage_System/option.h" charset="GBK" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

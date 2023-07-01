@@ -1,5 +1,5 @@
-//
-// Created by ¹ÈÑÒ on 2022/12/23.
+ï»¿//
+// Created by è°·å²© on 2022/12/23.
 //
 #include "data_list.h"
 #include "menu.h"
@@ -10,7 +10,7 @@
 #include "catagory_management.h"
 #include "data_io.h"
 
-//Ö÷²Ëµ¥µÄÑ¡Ôñº¯Êı run¾ÍÊÇÔËĞĞµÄÒâË¼
+//ä¸»èœå•çš„é€‰æ‹©å‡½æ•° runå°±æ˜¯è¿è¡Œçš„æ„æ€
 void run(){
     int option= main_menu();
     switch (option) {
@@ -40,7 +40,7 @@ void run(){
     }
 }
 
-//·ÖÀà²Ëµ¥µÄÑ¡Ôñº¯Êı
+//åˆ†ç±»èœå•çš„é€‰æ‹©å‡½æ•°
 void catagory_options(){
     bool is_done=false;
     while (!is_done){

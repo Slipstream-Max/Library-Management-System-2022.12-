@@ -1,5 +1,5 @@
-//
-// Created by ¹ÈÑÒ on 2022/12/24.
+ï»¿//
+// Created by è°·å²© on 2022/12/24.
 //
 #include "stdlib.h"
 #include "data_list.h"
@@ -7,9 +7,9 @@
 #include "book.h"
 #include "string.h"
 
-//Êé¼®²éÑ¯
+//ä¹¦ç±æŸ¥è¯¢
 void book_search(){
-    printf("ÇëÊäÈëÏëÒª²éÑ¯µÄ·ÖÀàºÅ+£¨ÊéºÅ¡¢ÊéÃû£©\nÀýÈç£º1 2»òÕß1 ÈýÌå\n");
+    printf("è¯·è¾“å…¥æƒ³è¦æŸ¥è¯¢çš„åˆ†ç±»å·+ï¼ˆä¹¦å·ã€ä¹¦åï¼‰\nä¾‹å¦‚ï¼š1 2æˆ–è€…1 ä¸‰ä½“\n");
     fflush(stdout);
     int is_done=NON;
     while (!is_done){
@@ -27,11 +27,11 @@ void book_search(){
                 point=point->next;
             }
             if(point==NULL){
-                printf("Î´²éÑ¯µ½Õâ±¾Êé¡£\n");
+                printf("æœªæŸ¥è¯¢åˆ°è¿™æœ¬ä¹¦ã€‚\n");
                 continue_question(&is_done);
                 continue;
             }
-            printf("ÕÒµ½ÁË¡£\n·ÖÀàºÅ£º%d ÊéºÅ£º%d ÊéÃû£º%s\nÊé¼®×ÜÁ¿£º%d ¿â´æÁ¿£º%d ½èÔÄÁ¿%d\n",
+            printf("æ‰¾åˆ°äº†ã€‚\nåˆ†ç±»å·ï¼š%d ä¹¦å·ï¼š%d ä¹¦åï¼š%s\nä¹¦ç±æ€»é‡ï¼š%d åº“å­˜é‡ï¼š%d å€Ÿé˜…é‡%d\n",
                    cat_num,book_num,point->bookname,point->total_storage,point->storage_now,point->borrow_number);
             continue_question(&is_done);
             continue;
@@ -45,19 +45,19 @@ void book_search(){
             point=point->next;
         }
         if(point==NULL){
-            printf("Î´²éÑ¯µ½Õâ±¾Êé¡£\n");
+            printf("æœªæŸ¥è¯¢åˆ°è¿™æœ¬ä¹¦ã€‚\n");
             continue_question(&is_done);
             continue;
         }
-        printf("ÕÒµ½ÁË¡£\n·ÖÀàºÅ£º%d ÊéºÅ£º%d ÊéÃû£º%s\nÊé¼®×ÜÁ¿£º%d ¿â´æÁ¿£º%d ½èÔÄÁ¿%d\n",
+        printf("æ‰¾åˆ°äº†ã€‚\nåˆ†ç±»å·ï¼š%d ä¹¦å·ï¼š%d ä¹¦åï¼š%s\nä¹¦ç±æ€»é‡ï¼š%d åº“å­˜é‡ï¼š%d å€Ÿé˜…é‡%d\n",
                cat_num,point->book_number,point->bookname,point->total_storage,point->storage_now,point->borrow_number);
         continue_question(&is_done);
     }
 }
 
-//Êé¼®½èÔÄ
+//ä¹¦ç±å€Ÿé˜…
 void book_borrow(){
-    printf("ÇëÊäÈëÏëÒª½èÔÄµÄÊé¡£ ·ÖÀàºÅ+ÊéºÅ\nÀýÈç£º1 2\n");
+    printf("è¯·è¾“å…¥æƒ³è¦å€Ÿé˜…çš„ä¹¦ã€‚ åˆ†ç±»å·+ä¹¦å·\nä¾‹å¦‚ï¼š1 2\n");
     fflush(stdout);
     int is_done=NON;
     while (!is_done){
@@ -65,7 +65,7 @@ void book_borrow(){
         scanf("%d %d",&cat_num,&book_num);
         fflush(stdin);
         if(cat_num>100||book_catagory[cat_num].head==NON){
-            printf("Äú·ÃÎÊµÄ·ÖÀà²»´æÔÚ£¡");
+            printf("æ‚¨è®¿é—®çš„åˆ†ç±»ä¸å­˜åœ¨ï¼");
             continue_question(&is_done);
             continue;
         }
@@ -77,23 +77,23 @@ void book_borrow(){
             point=point->next;
         }
         if(point==NULL){
-            printf("Î´²éÑ¯µ½Õâ±¾Êé¡£\n");
+            printf("æœªæŸ¥è¯¢åˆ°è¿™æœ¬ä¹¦ã€‚\n");
 
         }
         if(point->storage_now==0){
-            printf("¿â´æ²»×ã£¬ÎÞ·¨½èÔÄ¡£\n");
+            printf("åº“å­˜ä¸è¶³ï¼Œæ— æ³•å€Ÿé˜…ã€‚\n");
             continue_question(&is_done);
             continue;
         }
         point->borrow_number++;point->storage_now--;
-        printf("½èÔÄ³É¹¦¡£½èÔÄÁ¿Îª%d£¬¿â´æÎª%d\n",point->borrow_number,point->storage_now);
+        printf("å€Ÿé˜…æˆåŠŸã€‚å€Ÿé˜…é‡ä¸º%dï¼Œåº“å­˜ä¸º%d\n",point->borrow_number,point->storage_now);
         continue_question(&is_done);
     }
 }
 
-//Êé¼®¹é»¹
+//ä¹¦ç±å½’è¿˜
 void book_return(){
-    printf("ÇëÊäÈëÏëÒª¹é»¹µÄÊé¡£ ·ÖÀàºÅ+ÊéºÅ\nÀýÈç£º1 2\n");
+    printf("è¯·è¾“å…¥æƒ³è¦å½’è¿˜çš„ä¹¦ã€‚ åˆ†ç±»å·+ä¹¦å·\nä¾‹å¦‚ï¼š1 2\n");
     fflush(stdout);
     int is_done=NON;
     while (!is_done){
@@ -101,7 +101,7 @@ void book_return(){
         scanf("%d %d",&cat_num,&book_num);
         fflush(stdin);
         if(cat_num>100||book_catagory[cat_num].head==NON){
-            printf("Äú·ÃÎÊµÄ·ÖÀà²»´æÔÚ£¡");
+            printf("æ‚¨è®¿é—®çš„åˆ†ç±»ä¸å­˜åœ¨ï¼");
             continue_question(&is_done);
             continue;
         }
@@ -113,16 +113,16 @@ void book_return(){
             point=point->next;
         }
         if(point==NULL){
-            printf("Î´²éÑ¯µ½Õâ±¾Êé¡£\n");
+            printf("æœªæŸ¥è¯¢åˆ°è¿™æœ¬ä¹¦ã€‚\n");
 
         }
         if(point->borrow_number==0){
-            printf("ÎÞ½èÔÄÓÃ»§£¬²»ÄÜ·µ»¹¡£\n");
+            printf("æ— å€Ÿé˜…ç”¨æˆ·ï¼Œä¸èƒ½è¿”è¿˜ã€‚\n");
             continue_question(&is_done);
             continue;
         }
         point->borrow_number--;point->storage_now++;
-        printf("·µ»¹³É¹¦¡£½èÔÄÁ¿Îª%d£¬¿â´æÎª%d\n",point->borrow_number,point->storage_now);
+        printf("è¿”è¿˜æˆåŠŸã€‚å€Ÿé˜…é‡ä¸º%dï¼Œåº“å­˜ä¸º%d\n",point->borrow_number,point->storage_now);
         continue_question(&is_done);
     }
 }

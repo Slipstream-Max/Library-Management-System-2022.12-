@@ -1,10 +1,10 @@
-//
-// Created by ¹ÈÑÒ on 2022/12/24.
+ï»¿//
+// Created by è°·å²© on 2022/12/24.
 //
 
 #ifndef LIBRARY_MANAGE_SYSTEM_BOOK_H
 #define LIBRARY_MANAGE_SYSTEM_BOOK_H
-void book_search(); //Êé¼®²éÑ¯
-void book_borrow(); //Êé¼®½èÔÄ
-void book_return(); //Êé¼®¹é»¹
+void book_search(); //ä¹¦ç±æŸ¥è¯¢
+void book_borrow(); //ä¹¦ç±å€Ÿé˜…
+void book_return(); //ä¹¦ç±å½’è¿˜
 #endif //LIBRARY_MANAGE_SYSTEM_BOOK_H

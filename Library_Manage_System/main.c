@@ -1,13 +1,13 @@
-//
-// Created by ¹ÈÑÒ on 2022/12/21.
+ï»¿//
+// Created by è°·å²© on 2022/12/21.
 //
 #include "option.h"
 #include "data_list.h"
 #include "data_io.h"
 int main() {
-    catagory_init();//³õÊ¼»¯·ÖÀà
-    data_import();  //µ¼ÈëÊı¾İ
+    catagory_init();//åˆå§‹åŒ–åˆ†ç±»
+    data_import();  //å¯¼å…¥æ•°æ®
     while (1){
-        run(); //ÔËĞĞ½çÃæ
+        run(); //è¿è¡Œç•Œé¢
     }
 }

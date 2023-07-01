@@ -1,12 +1,12 @@
-//
-// Created by ¹ÈÑÒ on 2022/12/22.
+ï»¿//
+// Created by è°·å²© on 2022/12/22.
 //
 
 #ifndef LIBRARY_MANAGE_SYSTEM_DATA_LIST_H
 #define LIBRARY_MANAGE_SYSTEM_DATA_LIST_H
-#define NON 0 //²»´æÔÚ¸Ã·ÖÀà
-#define YES 1 //´æÔÚ¸Ã·ÖÀà
-//Í¼Êé½áµã
+#define NON 0 //ä¸å­˜åœ¨è¯¥åˆ†ç±»
+#define YES 1 //å­˜åœ¨è¯¥åˆ†ç±»
+//å›¾ä¹¦ç»“ç‚¹
 struct Book_Node{
     int able;
     int book_number;
@@ -16,7 +16,7 @@ struct Book_Node{
     int borrow_number;
     struct Book_Node *next;
 };
-//·ÖÀà½áµã
+//åˆ†ç±»ç»“ç‚¹
 struct catagory{
     int is_exist;
     int size;

@@ -1,13 +1,13 @@
-//
-// Created by ¹ÈÑÒ on 2022/12/27.
+ï»¿//
+// Created by è°·å²© on 2022/12/27.
 //
 
 #ifndef LIBRARY_MANAGE_SYSTEM_CATAGORY_MANAGEMENT_H
 #define LIBRARY_MANAGE_SYSTEM_CATAGORY_MANAGEMENT_H
 #define cat_length 101
-void catagory_search(); //·ÖÀà²éÕÒ
-void full_display();    //È«ÁĞ³ö ÊôÓÚ·ÖÀà²éÕÒµÄÒ»¸öĞ¡¹¦ÄÜ
-void catagory_add();    //Ìí¼Ó·ÖÀà
-void catagory_del();    //É¾³ı·ÖÀà
-void catagory_modify(); //ĞŞ¸Ä·ÖÀà
+void catagory_search(); //åˆ†ç±»æŸ¥æ‰¾
+void full_display();    //å…¨åˆ—å‡º å±äºåˆ†ç±»æŸ¥æ‰¾çš„ä¸€ä¸ªå°åŠŸèƒ½
+void catagory_add();    //æ·»åŠ åˆ†ç±»
+void catagory_del();    //åˆ é™¤åˆ†ç±»
+void catagory_modify(); //ä¿®æ”¹åˆ†ç±»
 #endif //LIBRARY_MANAGE_SYSTEM_CATAGORY_MANAGEMENT_H

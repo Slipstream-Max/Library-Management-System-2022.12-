@@ -1,5 +1,5 @@
-//
-// Created by ¹ÈÑÒ on 2022/12/28.
+ï»¿//
+// Created by è°·å²© on 2022/12/28.
 //
 #include <malloc.h>
 #include <stdio.h>
@@ -9,43 +9,43 @@
 #include "data_list.h"
 
 void data_import() {
-    //Ö¸ÏòÎÄ¼ş
-    FILE *fp = fopen("./data/data_load.txt", "r+");
+    //æŒ‡å‘æ–‡ä»¶
+    FILE *fp = fopen("./data/data_load.txt", "r+ï¼Œccs=UTF-8");
     if(!fp){
         perror("file open failed");
         return;
     }
     char buf[BUFSIZ]={0};
-    fgets(buf,BUFSIZ,fp); //Ê×ĞĞÈ¥µô
+    fgets(buf,BUFSIZ,fp); //é¦–è¡Œå»æ‰
 
-    //µ¼Èë·ÖÀà
-    while (strncmp(buf,"·ÖÀàºÅ ÊéºÅ ÊéÃû Êé¼®ÊıÁ¿ ¿â´æÁ¿ ½èÔÄÁ¿\n", BUFSIZ)!=0){
+    //å¯¼å…¥åˆ†ç±»
+    while (strncmp(buf,"åˆ†ç±»å· ä¹¦å· ä¹¦å ä¹¦ç±æ•°é‡ åº“å­˜é‡ å€Ÿé˜…é‡\n", BUFSIZ)!=0){
         fgets(buf,BUFSIZ,fp);
-        if(strncmp(buf,"·ÖÀàºÅ ÊéºÅ ÊéÃû Êé¼®ÊıÁ¿ ¿â´æÁ¿ ½èÔÄÁ¿\n", BUFSIZ)!=0){
+        if(strncmp(buf,"åˆ†ç±»å· ä¹¦å· ä¹¦å ä¹¦ç±æ•°é‡ åº“å­˜é‡ å€Ÿé˜…é‡\n", BUFSIZ)!=0){
             catagory_import(buf);
         }
     }
-    //µ¼ÈëÍ¼Êé
+    //å¯¼å…¥å›¾ä¹¦
     while(!feof(fp)){
         fgets(buf, BUFSIZ, fp);
         book_import(buf);
     }
-    printf("Í¼Êéµ¼Èë³É¹¦£¡\n");
+    printf("å›¾ä¹¦å¯¼å…¥æˆåŠŸï¼\n");
     fclose(fp);
 }
 
 void data_export() {
-    FILE *fp = fopen("./data/data_save.txt", "w+");
+    FILE *fp = fopen("./data/data_save.txt", "w+ï¼Œccs=UTF-8");
     if(!fp){
         perror("file open failed");
         return;
     }
-    fprintf(fp,"·ÖÀàºÅ ·ÖÀàÃû\n");
+    fprintf(fp,"åˆ†ç±»å· åˆ†ç±»å\n");
     catagory_export(fp);
-    fprintf(fp,"·ÖÀàºÅ ÊéºÅ ÊéÃû Êé¼®ÊıÁ¿ ¿â´æÁ¿ ½èÔÄÁ¿\n");
+    fprintf(fp,"åˆ†ç±»å· ä¹¦å· ä¹¦å ä¹¦ç±æ•°é‡ åº“å­˜é‡ å€Ÿé˜…é‡\n");
     book_export(fp);
     fclose(fp);
-    printf("±£´æ³É¹¦£¡\n");
+    printf("ä¿å­˜æˆåŠŸï¼\n");
 }
 
 void catagory_import(char *buf){
@@ -59,24 +59,24 @@ void catagory_import(char *buf){
 void book_import(char *buf){
     int catagory_number,book_number,total_storage,storage_now,borrow_number;
     char book_name[100];
-    //¸øËùÓĞÔªËØ¸³Öµ
+    //ç»™æ‰€æœ‰å…ƒç´ èµ‹å€¼
     sscanf(buf,"%d %d %s %d %d %d",&catagory_number,&book_number,book_name,&total_storage,&storage_now,&borrow_number);
-    struct Book_Node *New_Book; //¶¯Ì¬ÉêÇëÒ»¸öÄÚ´æ¿Õ¼ä³ÉÎªÍ¼Êé
+    struct Book_Node *New_Book; //åŠ¨æ€ç”³è¯·ä¸€ä¸ªå†…å­˜ç©ºé—´æˆä¸ºå›¾ä¹¦
     New_Book=(struct Book_Node*) malloc(sizeof(struct Book_Node));
     New_Book->next=book_catagory[catagory_number].head;
-    //³õÊ¼»¯Îª¿É·ÃÎÊ
+    //åˆå§‹åŒ–ä¸ºå¯è®¿é—®
     New_Book->able=YES;
-    //ÊéÃû×Ö
+    //ä¹¦åå­—
     strcpy(New_Book->bookname,book_name);
-    //ÊéºÅ
+    //ä¹¦å·
     New_Book->book_number=book_number;
-    //ÉèÖÃÊéµÄ´æÁ¿
+    //è®¾ç½®ä¹¦çš„å­˜é‡
     New_Book->total_storage=total_storage;
     New_Book->storage_now=storage_now;
     New_Book->borrow_number=borrow_number;
-    //Í·Ö¸ÕëÖ¸Ïò×îºó´æµÄÊé
+    //å¤´æŒ‡é’ˆæŒ‡å‘æœ€åå­˜çš„ä¹¦
     book_catagory[catagory_number].head=New_Book;
-    book_catagory[catagory_number].size+=1; //ÊıÁ¿Ôö¼Ó
+    book_catagory[catagory_number].size+=1; //æ•°é‡å¢åŠ 
 }
 
 void catagory_export(FILE *fp){
@@ -102,10 +102,10 @@ void book_export(FILE *fp){
         }
     }
     long pos = ftell(fp);
-    // ½«ÎÄ¼şÖ¸Õëµ¹»Øµ½ÎÄ¼şÄ©Î²
+    // å°†æ–‡ä»¶æŒ‡é’ˆå€’å›åˆ°æ–‡ä»¶æœ«å°¾
     fseek(fp, -1, SEEK_END);
-    // ¸²¸ÇÔ­ÓĞµÄ»»ĞĞ·û
+    // è¦†ç›–åŸæœ‰çš„æ¢è¡Œç¬¦
     fputc(EOF, fp);
-    // ½«ÎÄ¼şÖ¸Õëµ¹»Øµ½ÎÄ¼şÄ©Î²
+    // å°†æ–‡ä»¶æŒ‡é’ˆå€’å›åˆ°æ–‡ä»¶æœ«å°¾
     fseek(fp, pos, SEEK_SET);
 }
